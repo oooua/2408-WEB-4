@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="count"></p>
+    <script>
+        const count = document.querySelector('.count')
+        const time = 2;
+        const goal = 100000;
+        const frame = 60;
+        const totalFrame = time * frame;
+
+        for(let i = 0 ; i <= totalFrame ; i++ ){
+            const 진행도 = i/totalFrame
+            setTimeout(() => {
+                count.innerText = parseInt(goal * easeInOutCubic(진행도));
+            },i/frame * 1000);
+        }
+
+        let 나누기 = 1/totalFrame
+
+        console.log(나누기)
+        
+        // for(let i = 0 ; i <= totalFrame ; i++ ){
+        //     const 진행도 = i/totalFrame
+        //     setTimeout(() => {
+        //         count.innerText = parseInt(goal * easeInOutBack(진행도));
+        //     },i/frame * 1000);
+        // }
+
+        function easeInOutCubic(x){
+            return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+        }
+
+        function easeInOutBack(x) {
+            const c1 = 1.70158;
+            const c2 = c1 * 1.525;
+
+            return x < 0.5
+            ? (Math.pow(2 * x, 2) * ((c2 + 1) * 2 * x - c2)) / 2
+            : (Math.pow(2 * x - 2, 2) * ((c2 + 1) * (x * 2 - 2) + c2) + 2) / 2;
+        }
+
+        for(let i = 0 ; i < 100 ; i++){
+            const 퍼센트 = i/100;
+            console.log (``)
+        }
+
+        // 위의 상수들 반복문 수정
+        // 1초당 횟수 60번 2초에 120 1000000
+        // 1000000 나누기 120?
+        
+
+    </script>
+</body>
+</html>
