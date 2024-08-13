@@ -14,33 +14,44 @@
             background-color: #333;
         }
 
-        .orb {
+        .planet {
             position: absolute;
             border-radius: 50%;
             transform: translate(-50%,-50%);
+
+            animation: vinusRevolution 1s infinite linear;
+            transform-origin: 0px calc(200px + 10px);
+            left: 50%;
+            top: 0%;
         }
 
         .sun{
             width: 200px;
             height: 200px;
             background-color: red;
-
-            left: 500px;
-            top: 300px;
+            left: 50%;
+            top: 50%;
         }
 
         .vinus {
-            width: 20px;
-            height: 20px;
-            background-color: yellow;
-
-            left: 300px;
-            top: 300px;
-
-            transform-origin: right top;
-
-            animation : revolution 1s infinite linear;
+            width: 28px;
+            height: 28px;
+            background-color: rgb(218, 218, 122);
         }
+
+        .erth {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(15, 99, 196);
+        }
+
+        .moon {
+            width: 16px;
+            height: 16px;
+            background-color: rgb(171, 176, 182);
+        }
+
+
 
         @keyframes revolution {
             0%{
@@ -50,14 +61,70 @@
                 transform: translate(-50%,-50%) rotate(360deg);
             }
         }
+
+        .orbit {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 1px solid white;
+            transform: translate(-50%,-50%);
+        }
+
+        .공전 {
+            width: 400px;
+            height: 400px;
+            animation: revolution infinite 18s linear;
+        }
+
+        .지구 {
+            width: 600px;
+            height: 600px;
+            animation: revolution infinite 15s linear;
+        }
+        
+        .달 {
+            width: 80px;
+            height: 80px;
+            animation: revolution infinite 20s linear;
+        }
+
+        /* .moon-orbit {
+            position: absolute;
+            left: calc(50% + 300px);
+            top: calc(50% + 300px);
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 1px solid white;
+            transform: translate(-50%,-50%);
+
+            width: 600px;
+            height: 600px;
+            animation: revolution infinite 10s linear;
+        } */
+
+
+
+
+
     </style>
 </head>
 <body>
-    <div class="sun orb">
-        sun
+    <div class="sun planet">
+
     </div>
-    <div class="vinus orb">
-        vinus
+    <div class="공전 orbit">
+        <div class="vinus planet"></div>
     </div>
+    <div class="지구 orbit">
+            <div class="erth planet">
+                <div class="달 orbit">
+                    <div class="moon planet"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
