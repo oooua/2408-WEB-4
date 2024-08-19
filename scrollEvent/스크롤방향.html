@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <script>
+        // scrollY 가 변화되는 값
+        let 이전값 = window.scrollY
+        window.addEventListener('scroll',()=>{
+            
+            if(window.scrollY > 이전값) {
+                // window.scrollY 가 이전값 (0) 보다 크면 아래
+                // console.log(scrollY)
+                console.log('아래')
+            }else{
+                console.log('위')
+            }
+        // 스크롤을 함으로써 변수가 바뀌니까 변수를 바꿔주는 것이다.
+        이전값 = window.scrollY
+    })
+    </script>
+</body>
+</html>
