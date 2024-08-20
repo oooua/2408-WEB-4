@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>진행도</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 5000px;
+            background-color: lightgray;
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        .graph {
+            height: 8px;
+            background-color: lightcoral;
+        }
+
+        .pull {
+            transform: scaleX(0);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="graph"></div>
+
+    <script>
+        
+        const graph = document.querySelector('.graph')
+        
+        let percent = (5000/window.scrollY);
+        let 이전값 = window.scrollY;
+
+        window.addEventListener('scroll',()=>{
+            
+            if(window.scrollY > 이전값) {
+
+                console.log('아래')
+            }else{
+                console.log('위')
+            }
+
+        이전값 = window.scrollY
+    })
+    </script>
+</body>
+</html>
