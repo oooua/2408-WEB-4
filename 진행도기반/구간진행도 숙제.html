@@ -42,17 +42,18 @@
 
             // 최댓값 100되는 지점
             // 타겟의 바닥이 - 보이는시점 
-            const distance = targetPos.top - window.innerHeight.bottom;
-            const maxDistance = (targetPos.bottom - window.innerHeight)*-1;
-            const ratio = clamp(maxDistance/distance,0,1)
-            console.log(maxDistance)
-            // progress.innerText = `${parseInt(진행도*100)}%`
+            const distance = targetPos.top*-1;
+            const maxDistance = targetPos.height - window.innerHeight;
+            const ratio = clamp(distance/maxDistance,0,1)
+            // console.log(targetPos.top)
+            console.log(window.innerHeight)
+
+            progress.innerText = `${parseInt(ratio*100)}%`
         })
 
         function clamp(value,min,max){
             return Math.max(Math.min(value,max),min)
         }
-    </script
     </script>
 </body>
 </html>
