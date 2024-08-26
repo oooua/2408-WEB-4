@@ -25,10 +25,6 @@
             border: 1px solid red;
             box-sizing: border-box;
         }
-
-        /* body::-webkit-scrollbar {
-            display: none;
-        } */
     </style>
 </head>
 <body>
@@ -36,27 +32,22 @@
 
     </section>
 
-    <script>
 
+    <script>
 
         const 섹션 = document.getElementById('패럴렉스');
         const scrollbarWidth = window.innerWidth - document.body.clientWidth
-
-        // const 스롤 = window.getBoundingClientRect()
-        // const 값 = 섹션.getBoundingClientRect()
-        // const 나머지 =  값.clientWidth - window.innerWidth + window.innerHeight;
         
-        document.body.style.height = `${섹션.getBoundingClientRect().width - window.innerWidth + window.innerHeight + scrollbarWidth }px`;
-
-        window.addEventListener('resize', () =>{
-            document.body.style.height = `${섹션.getBoundingClientRect().width - window.innerWidth + window.innerHeight + scrollbarWidth }px`;
+        document.body.style.height = `${섹션.getBoundingClientRect().width - window.innerWidth + window.innerHeight + scrollbarWidth}px`;
+        
+        window.addEventListener('resize',()=>{    
+            document.body.style.height = `${섹션.getBoundingClientRect().width - window.innerWidth + window.innerHeight + scrollbarWidth}px`;
         })
-
+        
         window.addEventListener('scroll', () =>{
-            
-            섹션.style.transform = `translateX(-${window.scrollY}px)`
 
-            // console.log(document.body.style.height)
+            console.log(window.scrollY)
+            섹션.style.transform = `translateX(-${window.scrollY}px)`
         })
     </script>
 
